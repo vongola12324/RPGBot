@@ -1,2 +1,3 @@
-django
-django-material
+Django==1.11
+django-material==0.13.1
+pytz==2017.2

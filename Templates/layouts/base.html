@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+{% load i18n static %}
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE|default:'zh-Hant' }}" >
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Site Properties -->
+    <title>{% block title %}{% endblock %} </title>
+    {% block extrahead %}{% endblock %}
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.10.0/css/alertify.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.10.0/css/themes/semantic.min.css"/>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/dataTables.semanticui.min.css">
+
+    {% block extrastyle %}{% endblock %}
+
+</head>
+{% load i18n %}
+
+<body class="pushable">
+    <!-- Navbar -->
+    {% include "navbar/navbar.html" %}
+    <!-- MainBlock -->
+    <div class="pusher">
+        <div class="ui container">
+            <!-- Content -->
+            {% block content %}{% endblock %}
+        </div>
+        <!-- Footer -->
+        {% include "layouts/footer.html" %}
+    </div>
+    <!-- JavaScript -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script src="//cdn.jsdelivr.net/alertifyjs/1.10.0/alertify.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.15/js/dataTables.semanticui.min.js"></script>
+</body>
+</html>

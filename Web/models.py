@@ -16,6 +16,9 @@ class PetSkill(models.Model):
     directAttack = models.IntegerField()
     directAttackPer = models.IntegerField()
 
+    def __unicode__(self):
+        return self.name
+
 
 class PetStatus(models.Model):
     name = models.CharField(max_length=100)
@@ -36,7 +39,7 @@ class PetPrototype(models.Model):
     minHP = models.IntegerField()
     minAtk = models.IntegerField()
     minDef = models.IntegerField()
-    skills = models.ManyToManyField(PetSkill)
+    skills = models.ManyToManyField(PetSkill, blank=True)
     maxLevel = models.PositiveIntegerField()
 
 

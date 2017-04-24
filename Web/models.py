@@ -4,6 +4,7 @@ from django.db import models
 
 class Profile(models.Model):
     user = models.OneToOneField(User)
+    name = models.CharField(max_length=100, default="Player")
 
 
 class PetSkill(models.Model):
@@ -19,9 +20,9 @@ class PetSkill(models.Model):
 class PetStatus(models.Model):
     name = models.CharField(max_length=100)
     desc = models.TextField()
-    noAtk = models.BooleanField()
-    allyAtkPer = models.IntegerField()
-    selfAtkPer = models.IntegerField()
+    noAtk = models.PositiveIntegerField(default=0)
+    allyAtkPer = models.PositiveIntegerField(default=0)
+    selfAtkPer = models.PositiveIntegerField(default=0)
     modAtk = models.IntegerField()
     modDef = models.IntegerField()
 
@@ -45,8 +46,6 @@ class Pet(models.Model):
     level = models.PositiveIntegerField()
     status = models.ManyToManyField(PetStatus)
 
-
 # class PetEvolution(models.Model):
 #     frm = models.ForeignKey(PetPrototype)
 #     dst = models.OneToOneField(PetPrototype)
-

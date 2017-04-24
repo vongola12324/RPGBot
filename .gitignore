@@ -214,3 +214,4 @@ pip-selfcheck.json
 Static/*
 !Static/.gitkeep
 !Static/app
+db.sqlite3

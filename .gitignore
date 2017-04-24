@@ -212,4 +212,5 @@ pip-selfcheck.json
 
 ### Project
 Static/*
+!Static/.gitkeep
 !Static/app

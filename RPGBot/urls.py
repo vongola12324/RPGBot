@@ -20,5 +20,5 @@ import Web
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'^$', 'Web.views.get_index', name='index'),
-    url(r'^rpg', include('Web.urls')),
+    url(r'^$', include('Web.urls')),
 ]
